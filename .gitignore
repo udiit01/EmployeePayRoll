@@ -1,0 +1,40 @@
+# Ignore compiled Java class files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore IntelliJ & Eclipse settings
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+/.metadata
+/.settings
+/.classpath
+/.project
+
+# Ignore build directories
+/target/
+/bin/
+/build/
+
+# Ignore dependency folders
+/node_modules/
+/out/
+
+# Ignore logs and temp files
+*.log
+/logs/
+/tmp/
+/hs_err_pid*
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment & credentials
+.env
+application.properties
+application.yml
