@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Payroll Management</title>
+         <link rel="stylesheet" href="style.css"> 
+         <script src="script.js"></script>
+         <script src="config.js"></script>
+    </head>
+    <body>
+             <header> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0MzYxZWUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xMiAxNnYtNiIvPjxwYXRoIGQ9Ik0xNSAxMWwtMy0zbC0zIDMiLz48L3N2Zz4=" alt="Payroll Logo" class="logo"> 
+                <h1>Payroll Management System</h1> 
+            </header>
+
+    <main>
+        <!-- Add Employee Section -->
+        <section class="add-employee">
+            <h2>Add Employee</h2>
+            <select id="employeeType">
+                <option value="FULLTIME">Full-Time</option>
+                <option value="PARTTIME">Part-Time</option>
+            </select>
+            <input type="text" id="empName" placeholder="Employee Name">
+            <input type="number" id="monthlySalary" placeholder="Monthly Salary (Full-Time)" class="ft-fields">
+            <input type="number" id="hoursWorked" placeholder="Hours Worked (Part-Time)" class="pt-fields hidden">
+            <input type="number" id="hourlyRate" placeholder="Hourly Rate (Part-Time)" class="pt-fields hidden">
+            <button class="add-btn">Add Employee</button>
+        </section>
+
+        <!-- Employee List -->
+        <section class="employees">
+            <h2>Employees</h2>
+            <button class="fetch-btn">Fetch Employees</button>
+            <div id="employee-list" class="card-container"></div>
+        </section>
+
+        <!-- Generate Payslip -->
+        <section class="payslip">
+            <h2>Generate Payslip</h2>
+            <input type="number" id="empId" placeholder="Enter Employee ID">
+            <input type="number" id="bonus" placeholder="Bonus">
+            <input type="number" id="hours" placeholder="Total Hours Worked">
+            <button class="generate-btn">Generate Payslip</button>
+            <div id="payslip-output"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Payroll System &copy; 2025</p>
+    </footer>
+</body>
+</html>
+
