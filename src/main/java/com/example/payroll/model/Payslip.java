@@ -19,13 +19,13 @@ public class Payslip {
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    private double basicSalary;
+    private double basicMonthlySalary;
     private double bonus;
     private double overtimePay;
     private double taxDeduction;
     private double insuranceDeduction;
     private double providentFund;
     private double totalDeductions;
-    private double netSalary;
+    private double netMonthlySalary;
     private LocalDate payslipDate;
 }

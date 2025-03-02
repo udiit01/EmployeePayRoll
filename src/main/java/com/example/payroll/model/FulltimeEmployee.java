@@ -11,10 +11,12 @@ import lombok.*;
 @AllArgsConstructor
 public class FulltimeEmployee extends Employee {
 
-    private double monthlySalary;
-
-    // ✅ Fix: Change standardHours from int → double
+    private double yearlySalary;
+    
     public double calculateSalary(double overtimeMultiplier, double standardHours, double overtimeHours) {
+       
+        double monthlySalary = yearlySalary/12;
+        
         double baseHourlyRate = monthlySalary / standardHours;
         double overtimePay = overtimeHours * (baseHourlyRate * overtimeMultiplier);
         return monthlySalary + overtimePay;
@@ -22,6 +24,6 @@ public class FulltimeEmployee extends Employee {
 
     @Override
     public double calculateSalary() {
-        return monthlySalary;
+        return yearlySalary;
     }
 }

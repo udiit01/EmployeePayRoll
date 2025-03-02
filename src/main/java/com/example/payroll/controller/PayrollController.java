@@ -1,22 +1,18 @@
 package com.example.payroll.controller;
-
+import com.example.payroll.model.CompanyPolicy;
 import com.example.payroll.model.Employee;
 import com.example.payroll.model.Payslip;
-import com.example.payroll.model.CompanyPolicy;
 import com.example.payroll.service.PayrollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
-
-
 import java.util.List;
 
-@CrossOrigin(origins = "*") // ✅ Allow requests from frontend
+@CrossOrigin(origins = "*")
 
 @RestController
+
 @RequestMapping("/payroll")
-//s@CrossOrigin(origins = "*")
 public class PayrollController {
 
     @Autowired
@@ -26,14 +22,13 @@ public class PayrollController {
     public List<Employee> getAllEmployees() {
         return payrollService.getAllEmployees();
     }
+
     @PostMapping("/employees")
     public Employee createEmployee(@RequestBody Employee employee) {
         return payrollService.createEmployee(employee);
     }
-
-
-
-    @PostMapping("/payslip/{id}")
+    
+        @PostMapping("/payslip/{id}")
     public Payslip generatePayslip(@PathVariable Long id, 
                                    @RequestParam double bonus,
                                    @RequestParam(required = false, defaultValue = "0") double totalHoursWorked) {
@@ -53,5 +48,4 @@ public class PayrollController {
     public CompanyPolicy createCompanyPolicy(@RequestBody CompanyPolicy policy) {
         return payrollService.createCompanyPolicy(policy);
     }
-
 }
